@@ -1,0 +1,107 @@
+@keyframes spin {
+    from {
+      transform: translateZ(-100px) rotateX(0deg) rotateY(0deg);
+    }
+    to {
+      transform: translateZ(-100px) rotateX(720deg) rotateY(360deg);
+    }
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 1px dashed red;
+}
+
+.canvas{
+    height: calc(100vh - 50px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 600px;
+}
+.space{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    animation: spin 10s infinite linear;
+}
+.space div{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    text-align: center;
+    line-height: 200px;
+    border: 1px solid white;
+    color: white;
+    font-size: 40px;
+}
+.box_front{
+    background-color: rgba(0, 174, 249, 0.719);
+    transform: rotateX(0deg) translateZ(100px);
+
+}
+.box_right{
+    background-color: rgba(222, 25, 25, 0.719);
+    transform: rotateY(90deg) translateZ(100px);
+}
+.box_back{
+    background-color: rgba(82, 221, 47, 0.719);
+    transform: rotateY(180deg) translateZ(100px);
+}
+.box_left{
+    background-color: rgba(241, 126, 18, 0.719);
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.box_top{
+    background-color: rgba(226, 25, 92, 0.719);
+    transform: rotateX(90deg) translateZ(100px);
+}
+.box_bottom{
+    background-color: rgba(47, 56, 221, 0.719);
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.bottom_nav{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.Chng_btns{
+    
+}
+.Chng_btns label{
+    margin-right: 10px;
+}
+
+#radio-front:checked ~ .space {
+    transform: rotateY(90deg); 
+}
+
+#radio-left:checked ~ .space {
+    transform: rotateY(90deg); 
+}
+    
+#radio-right:checked ~ .space {
+    transform: rotateY(-90deg); 
+}
+    
+#radio-bottom:checked ~ .space {
+    transform: rotateX(90deg); 
+}
+
+#radio-top:checked ~ .space {
+    transform: rotateX(-90deg); 
+}
+    
+#radio-back:checked ~ .space {
+    transform: rotateY(180deg); 
+}
