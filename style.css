@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px dashed red;
+    user-select: none;
 }
 
 .canvas{
@@ -21,15 +21,59 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 600px;
+}
+
+.outer_space{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    perspective: 500px;
+}
+
+.btn_bar_top{
+    position: absolute;
+    height: 50px;
+    width: 300px;
+    top: 0;
+}
+.btn_bar_left{
+    position: absolute;
+    height: 200px;
+    width: 50px;
+    top: 50px;
+    left: 0;
+}
+.btn_bar_right{
+    position: absolute;
+    height: 200px;
+    width: 50px;
+    top: 50px;
+    right: 0;
+}
+.btn_bar_bottom{
+    position: absolute;
+    height: 50px;
+    width: 300px;
+    bottom: 0;
+}
+.conBars{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.controllers{
+    width: fit-content;
+    transition: 1s;
 }
 .space{
     height: 200px;
     width: 200px;
-    position: relative;
+    position: absolute;
     transform-style: preserve-3d;
     transform: translateZ(-100px);
-    animation: spin 10s infinite linear;
+    transition: 1s;
+    top: 50px;
+    left: 50px;
 }
 .space div{
     height: 200px;
@@ -72,36 +116,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
-}
-.Chng_btns{
-    
-}
-.Chng_btns label{
-    margin-right: 10px;
-}
-
-#radio-front:checked ~ .space {
-    transform: rotateY(90deg); 
-}
-
-#radio-left:checked ~ .space {
-    transform: rotateY(90deg); 
-}
-    
-#radio-right:checked ~ .space {
-    transform: rotateY(-90deg); 
-}
-    
-#radio-bottom:checked ~ .space {
-    transform: rotateX(90deg); 
-}
-
-#radio-top:checked ~ .space {
-    transform: rotateX(-90deg); 
-}
-    
-#radio-back:checked ~ .space {
-    transform: rotateY(180deg); 
 }
